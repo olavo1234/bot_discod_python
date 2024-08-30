@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import initialSettings
+# import initialSettings
 
 
 

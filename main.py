@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 import math
-import botStatus
-import initialSettings
-import requests
-import asyncio
-import botData
+# import botStatus
+# import initialSettings // desativado: env
+# import requests // sem requirements
+# import asyncio
+# import botData // não ativo
+
 from sys import platform
-from discord.ext.commands.errors import MissingRequiredArgument, CommandNotFound
+# from discord.ext.commands.errors import MissingRequiredArgument, CommandNotFound
 
 
 
@@ -242,8 +243,8 @@ async def secret(ctx):
 @initialSettings.bot.event
 async def on_reaction_add(reaction, user):
     # Pegar os id do cargo e salvar em uma variavel
-    role_happy = user.guild.get_role(1236433934515044382)
-    role_bad = user.guild.get_role(1236434116140990654)
+    # role_happy = user.guild.get_role(1236433934515044382)
+    # role_bad = user.guild.get_role(1236434116140990654)
 
     if reaction.emoji == '👍':
         # Add e remove para adicionar esse cargo
@@ -301,7 +302,7 @@ async def get_random_image(ctx):
 @initialSettings.bot.command(name="nameDev", help="Vai pegar o nome do desenvolvedor")
 async def get_name_dev(ctx):
     # Essa função assincrona so irá pegar meu nome de usuário do discord e avatar
-    dev = await initialSettings.bot.fetch_user(botData.ID_USER)
+    # dev = await initialSettings.bot.fetch_user(botData.ID_USER)
     # Se usa "fetch_user()" para user que não estiver no histórico
     if dev is not None:
         await ctx.send(dev.name)
@@ -320,7 +321,7 @@ async def help(ctx):
         color=0xadd8e6
     )
 
-    dev = await initialSettings.bot.fetch_user(botData.ID_USER)
+    # dev = await initialSettings.bot.fetch_user(botData.ID_USER)
     
     embed_help_message.set_footer(
         text="Feito por " + dev.name,
